@@ -2067,11 +2067,11 @@ module.exports = function(arr, fn, initial){
       var formParams = {
       };
 
-      var authNames = ['basic':{
+      var authNames = [{'basic':{
       type:'basic',
       username:'demat',
       password:'d3m@7'
-    }];
+    }}];
       var contentTypes = ['application/json'];
       var accepts = ['*/*'];
       var returnType = ResponseScanResult;
