@@ -1430,10 +1430,11 @@ module.exports = function(arr, fn, initial){
      * The authentication methods to be included for all API calls.
      * @type {Array.<String>}
      */
-    this.authentications = {
+    this.authentications = [{basic:{
       type:'basic',
       username:'demat',
       password:'d3m@7'
+    }
     };
     /**
      * The default HTTP headers to be included for all API calls.
@@ -2067,7 +2068,7 @@ module.exports = function(arr, fn, initial){
       var formParams = {
       };
 
-      var authNames = [{'basic':{
+      var authNames = [{basic:{
       type:'basic',
       username:'demat',
       password:'d3m@7'
