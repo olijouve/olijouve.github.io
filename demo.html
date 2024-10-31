@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.6.4.js"></script>
+        <script src="browser/bundle.js"></script>
+        <script>
+
+            var scanApi;
+
+            function scan(duplex) {
+                var opts = {
+                    'duplex': duplex // {Boolean} duplex
+                };
+
+                var callback = function (error, data, response) {
+                    if (error) {
+                        console.error(error);
+                    } else {
+                        console.log('API called successfully. Returned data: ' + data, data);
+                        if (data.success === true) {
+                            $("body").append($("<img>", {src: "data:image/jpeg;base64," + data.result[0].data, width: "300px"}));
+                        } else {
+                            alert(data.msg);
+                        }
+                    }
+                };
+                scanApi.scanUsingPOST(opts, callback);
+            }
+
+            $(function () {
+                scanApi = window.getScanApi();
+                scanApi.apiClient.basePath = "https://127.0.0.1:9123/api";
+
+                $("#scanRectoVerso").bind("click", function () {
+                    scan(true)
+                });
+                $("#scanSingle").bind("click", function () {
+                    scan(false)
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="scanRectoVerso">scan recto verso</button>
+        <button id="scanSingle">scan simple</button>
+    </body>
+</html>
