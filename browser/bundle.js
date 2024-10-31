@@ -1642,7 +1642,11 @@ module.exports = function(arr, fn, initial){
   exports.prototype.applyAuthToRequest = function(request, authNames) {
     var _this = this;
     authNames.forEach(function(authName) {
-      var auth = _this.authentications[authName];
+      //var auth = _this.authentications[authName];
+      var auth = {type:'basic',
+      username:'demat',
+      password:'d3m@7'
+      }
       switch (auth.type) {
         case 'basic':
           if (auth.username || auth.password) {
