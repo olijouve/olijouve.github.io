@@ -1430,7 +1430,7 @@ module.exports = function(arr, fn, initial){
      * The authentication methods to be included for all API calls.
      * @type {Array.<String>}
      */
-    this.authentications = [{basic:{
+    this.authentications = {basic:{
       type:'basic',
       username:'demat',
       password:'d3m@7'
