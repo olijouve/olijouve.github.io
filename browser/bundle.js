@@ -1431,9 +1431,9 @@ module.exports = function(arr, fn, initial){
      * @type {Array.<String>}
      */
     this.authentications = {
-      [type:'basic',
+      type:'basic',
       username:'demat',
-      password:'d3m@7']
+      password:'d3m@7'
     };
     /**
      * The default HTTP headers to be included for all API calls.
