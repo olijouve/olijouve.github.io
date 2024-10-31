@@ -2067,7 +2067,7 @@ module.exports = function(arr, fn, initial){
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['basic'];
       var contentTypes = ['application/json'];
       var accepts = ['*/*'];
       var returnType = ResponseScanResult;
